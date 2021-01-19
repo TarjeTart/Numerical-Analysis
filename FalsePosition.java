@@ -46,6 +46,7 @@ public class FalsePosition {
 		return mid;
 	}
 	
+	//get equation of line connecting the two points and return when y=0
 	private static double mid(double x,double y) {
 		double m = (f(y)-f(x))/(y-x);
 		double b = f(x)-m*x;
