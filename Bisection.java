@@ -29,10 +29,13 @@ public class Bisection {
 	
 	//bisection algorithm
 	private static double bisection(double lower,double upper){
+		//initialize variables
 		double left,right;
 		left = lower;
 		right = upper;
+		//sets mid point
 		double mid = (left+right)/2;
+		//checks for precision
 		while(Math.abs(right-left) > 0.00001) {
 			if(f(left)*f(mid) > 0) {
 				left = mid;
