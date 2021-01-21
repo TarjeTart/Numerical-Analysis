@@ -5,7 +5,7 @@ public class FalsePosition {
 		double[] arr = signSwitch(0,1);
 		//run bisection and print results
 		for(int i = 0; i < 5;i++) {
-			System.out.println("iteration " + i + " = " + FalsePosition(arr[0],arr[1],i));
+			System.out.println("iteration " + i + " = " + FalsePos(arr[0],arr[1],i));
 		}
 		
 	}
@@ -29,8 +29,8 @@ public class FalsePosition {
 	}
 	
 	//false position algo
-	private static double FalsePosition(double lower,double upper,int iterations) {
-		//initializze variables
+	private static double FalsePos(double lower,double upper,int iterations) {
+		//Initialize variables
 		double left,right;
 		left = lower;
 		right = upper;
@@ -53,12 +53,12 @@ public class FalsePosition {
 		return mid;
 	}
 	
-	//get equation of line connecting the two points and return when y=0
-	private static double mid(double x,double y) {
-		//get slop
-		double m = (f(y)-f(x))/(y-x);
+	//get equation of line connecting the two points and return when f(x)=0
+	private static double mid(double left,double right) {
+		//get slope
+		double m = (f(right)-f(left))/(right-left);
 		//get y-intercept
-		double b = f(x)-m*x;
+		double b = f(right)-m*right;
 		//return x for when y=0
 		return (-b)/m;
 	}
